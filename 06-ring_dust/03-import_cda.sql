@@ -1,3 +1,4 @@
+create schema if not exists import;
 drop table if exists import.cda;
 create table import.cda(
   event_id text,
@@ -62,5 +63,4 @@ into cda.impacts
 from import.cda
 order by impact_event_time::timestamptz;
 
-alter table cda.impacts
-add id serial primary key;
+alter table cda.impacts add primary key (id);
