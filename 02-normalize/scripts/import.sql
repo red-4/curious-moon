@@ -5,8 +5,9 @@ drop table if exists spass_types cascade;
 drop table if exists requests cascade;
 drop table if exists event_types cascade;
 
-drop table if exists master_plan;
-create table master_plan(
+create schema if not exists import;
+drop table if exists import.master_plan;
+create table import.master_plan(
   start_time_utc text,
   duration text,
   date text,
