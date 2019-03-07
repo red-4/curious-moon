@@ -13,7 +13,7 @@ events.time_stamp,
 events.time_stamp::date as date,
 event_types.description as event,
 to_tsvector(
-    concat(events.description,'',events.title)
+    concat(events.description,' ',events.title)
 ) as search
 from events
 inner join event_types 
